@@ -1,0 +1,137 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Add Book | DescBook</title>
+        <ui:include src="header.xhtml"/>
+    </h:head>
+    <h:body style="background-color: lightsteelblue">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-info fixed-top" id="mainNav">
+            <div     class="container">
+                <a class="navbar-brand js-scroll-trigger" href="faces/index.xhtml">DescBook</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link js-scroll-trigger" href="faces/about.xhtml">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link js-scroll-trigger" href="faces/loginuser.xhtml">Login</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <br/><br/><br/>
+        <h:form>
+            <div class="container">
+            <div class="card card-login mx-auto mt-5">
+                <div  class="card-header text-center">Add Book</div>
+                <div style="text-align: center" class="card-body">
+                    <h:form  style="background-color: lightyellow">
+                        <div class="form-group">
+                            <div class="form-group">
+                                <h:outputText value="Title"/>
+                                <h:inputText id="inputTitle" class="form-control" label="Title" required="true" value="#{book.title}">
+                                    <f:validateLength for="inputTitle" minimum="1"/>
+                                </h:inputText>
+                                <h:message for="inputTitle" style="color:red" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="form-group">
+                                <h:outputText value="Author"/>
+                                <h:inputText id="inputAuthor" class="form-control" label="Author" required="true" value="#{book.author}">
+                                    <f:validateLength for="inputAuthor" minimum="1"/>
+                                </h:inputText>
+                                <h:message for="inputAuthor" style="color:red" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="form-group">
+                                <h:outputText value="Language"/>
+                                <h:inputText id="inputLanguage" class="form-control" label="Language" required="true" value="#{book.language}">
+                                    <f:validateLength for="inputLanguage" minimum="1"/>
+                                </h:inputText>
+                                <h:message for="inputLanguage" style="color:red" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="form-group">
+                                <h:outputText value="Publisher"/>
+                                <h:inputText id="inputPublisher" class="form-control" label="Publisher" required="true" value="#{book.publisher}">
+                                    <f:validateLength for="inputPublisher" minimum="1"/>
+                                </h:inputText>
+                                <h:message for="inputPublisher" style="color:red" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="form-group">
+                                <h:outputText value="Publish Country"/>
+                                <h:inputText id="inputCountry" class="form-control" label="Country" required="true" value="#{book.publishCountry}">
+                                    <f:validateLength for="inputCountry" minimum="1"/>
+                                </h:inputText>
+                                <h:message for="inputCountry" style="color:red" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="form-group">
+                                <h:outputText value="Category"/>
+                                <h:inputText id="inputCategory" class="form-control" label="Category" required="true" value="#{book.category}">
+                                    <f:validateLength for="inputCategory" minimum="1"/>
+                                </h:inputText>
+                                <h:message for="inputCategory" style="color:red" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="form-group">
+                                <h:outputText value="Total Pages"/>
+                                <h:inputText id="inputPages" class="form-control" label="Pages" required="true" value="#{book.totalPages}">
+                                    <f:validateLength for="inputPages" minimum="1"/>
+                                </h:inputText>
+                                <h:message for="inputPages" style="color:red" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="form-group">
+                                <h:outputText value="Est. Price"/>
+                                <h:inputText id="inputPrice" class="form-control" label="Price" required="true" value="#{book.estPrice}">
+                                    <f:validateLength for="inputPrice" minimum="1"/>
+                                </h:inputText>
+                                <h:message for="inputPrice" style="color:red" />
+                            </div>
+                        </div>
+                        <br/>
+                        <h:commandButton class="btn btn-info btn-block" value="Add book" action="#{book.save()}"/>
+                    </h:form>
+                </div>
+            </div>
+        </div>
+        </h:form>
+        <br/><br/><br/>
+        <footer class="py-5 text-center text-small" style="background-color: lightgrey">
+            <div class="container">
+                <p>Copyright &copy; DescBook 2019</p>
+                <ul class="list-inline">
+                    <li class="list-inline-item">
+                        <a href="#" style="color: darkslategray">Privacy Policy</a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a href="#" style="color: darkslategray">Terms of Use</a>
+                    </li>
+                    <li class="list-inline-item">
+                        <h:form>
+                            <h:commandLink value="Logout" style="color:lime" action="index.xhtml"/>
+                        </h:form>
+                    </li>
+                </ul>
+            </div>
+        </footer>
+    </h:body>
+</html>
+

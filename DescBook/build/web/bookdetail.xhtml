@@ -1,0 +1,55 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>#{book.title} Details | DescBook</title>
+        <ui:include src="header.xhtml"/>
+    </h:head>
+    <h:body>
+        <ui:include src="navbar.xhtml"/>
+        <br/><br/>
+        <h:form id="bookdetail">
+            <table border="0" align="top" width="100%" style="height: 501px; background-color: lightsteelblue">
+            <td align="center">
+                <img style="margin-left: 5%" src="img/#{book.id}.jpg" width="300" height="auto"/>
+                <ui:include src=""/>
+            </td>
+            <td width="85%%" align="top" style="height: 421px; background-color: lightsteelblue; font-size: 20px"><br/><br/><br/>
+                <div class="container">
+                    <h:outputText value="Title&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: "/>
+                    <h:outputText value="#{book.title}"/>
+                    <br/>
+                    <h:outputText value="Author&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: "/>
+                    <h:outputText value="#{book.author}"/>
+                    <br/>
+                    <h:outputText value="Language&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: "/>
+                    <h:outputText value="#{book.language}"/>
+                    <br/>
+                    <h:outputText value="Publisher&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: "/>
+                    <h:outputText value="#{book.publisher}"/>
+                    <br/>
+                    <h:outputText value="Country&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: "/>
+                    <h:outputText value="#{book.publishCountry}"/>
+                    <br/>
+                    <h:outputText value="Category&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: "/>
+                    <h:outputText value="#{book.category}"/>
+                    <br/>
+                    <h:outputText value="No. of Pages&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: "/>
+                    <h:outputText value="#{book.totalPages}"/>
+                    <br/>
+                    <h:outputText value="Estimated Price&nbsp;: "/>
+                    <h:outputText value="#{book.estPrice}"/>
+                    <br/>
+                    <br/>
+                    </div>
+            </td>
+        </table>
+        </h:form>
+        <ui:include src="footer.xhtml"/>
+    </h:body>
+</html>
+

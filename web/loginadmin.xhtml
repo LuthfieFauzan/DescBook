@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:head>
+        <title>Login Admin | DescBook</title>
+        <ui:include src="header.xhtml"/>
+    </h:head>
+    <h:body class="bg-dark">
+        <ui:include src="navbar.xhtml"/>
+        <br/><br/><br/>
+        <div class="container">
+            <div class="card card-login mx-auto mt-5">
+                <div class="card-header text-center">Login Admin</div>
+                <div class="card-body">
+                    <h:form>
+                        <div class="form-group">
+                            <div class="form-group">
+                                Username
+                                <h:inputText id="inputUsername" class="form-control" label="Username" required="true" value="#{login.username}"/>
+                                <h:message for="inputUsername" style="color:red"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="form-group">
+                                Password
+                                <h:inputSecret id="inputPassword" class="form-control" label="Password" required="true" redisplay="true" value="#{login.password}"/>
+                                <h:message for="inputPassword" style="color:red"/>   
+                            </div>
+                        </div>
+                        <h:outputText id="text" value="#{login.message}"
+                                      style="color: red; text-transform: uppercase; align-content: center"/>
+                        <h:commandButton class="btn btn-primary btn-block" value="Login" action="#{login.login()}"/>
+                        <br/>
+                    </h:form>
+                </div>
+            </div>
+        </div>
+        <br/><br/><br/>
+        <ui:include src="footer.xhtml"/>
+    </h:body>
+</html>

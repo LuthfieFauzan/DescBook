@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:head>
+        <title>DescBook</title>
+        <ui:include src="header.xhtml"/>
+    </h:head>
+    <h:body style="background-color: lightsteelblue">
+        <ui:include src="navbar.xhtml"/>
+        <header class="bg-transparent">
+            <div class="container text-center">
+                <h1>Source on Most of Book Details</h1>
+                <p class="lead">Getting detail of many popular books made easier with DescBook</p>
+            </div>
+        </header>
+        <h:form>
+            <h:inputHidden value="#{user.id}"/>  
+            <div class ="container">
+                <div class="row">
+                    <ui:repeat var="item" value="#{book.allRecords}">
+                        <div class="col-md-4 col-sm-6">
+                            <h:commandLink action="#{book.newid2(item.id)}">
+                                <div class="test1">
+                                    <h:graphicImage alt="Avatar" class="image" value="img/#{item.id}.jpg"/>
+                                        <div class="overlay">
+                                            <h3 class="texter">#{item.title}</h3>
+                                    </div>
+                                </div>
+                            </h:commandLink>
+                        </div>
+                    </ui:repeat>
+                </div>
+            </div>
+        </h:form>
+        <ui:include src="footer.xhtml"/>
+    </h:body>
+</html>

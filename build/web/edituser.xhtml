@@ -1,0 +1,73 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Edit User Data | DescBook</title>
+        <ui:include src="header.xhtml"/>
+    </h:head>
+    <body style="background: lightsteelblue">
+        <ui:include src="navbar.xhtml"/>
+        <br/><br/><br/>
+        <div class="container">
+            <div class="py-5 text-center">
+                <h2 style="font-weight: bolder">Edit User Data</h2>
+            </div>
+            <h:form>
+                <h:inputHidden value="#{user.id}"/>
+                <div class="row">
+                    <div class="container align-content-center">
+                        <div class="row">
+                            <div class="col-md-12 mb-3">
+                                <h:outputText value="Username" style="font-weight: bolder"/>
+                                <br/>
+                                <h:inputText class="form-control" id="inputUsername" label="Username" required="true" value="#{user.username}">
+                                    <f:validateLength for="inputUsername" minimum="1"/>
+                                </h:inputText>
+                                <h:message for="inputUsername" style="color:red"/>
+                            </div>
+                        </div>
+                        <h:inputHidden value="#{user.password}"/>
+                        <div class="row">
+                            <div class="col-md-12 mb-3">
+                                <h:outputText value="Name" style="font-weight: bolder"/>
+                                <br/>
+                                <h:inputText class="form-control" id="inputName" label="Name" required="true" value="#{user.name}">
+                                    <f:validateLength for="inputName" minimum="1"/>
+                                </h:inputText>
+                                <h:message for="inputName" style="color:red"/>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12 mb-3">
+                                <h:outputText value="Phone" style="font-weight: bolder"/>
+                                <br/>
+                                <h:inputText class="form-control" id="inputPhone" label="Phone" required="true" value="#{user.phone}">
+                                    <f:validateLength for="inputPhone" minimum="1"/>
+                                </h:inputText>
+                                <h:message for="inputPhone" style="color:red"/>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12 mb-3">
+                                <h:outputText value="Email" style="font-weight: bolder"/>
+                                <br/>
+                                <h:inputText class="form-control" id="inputEmail" label="Email" required="true" value="#{user.email}">
+                                    <f:validateLength for="inputEmail" minimum="1"/>
+                                </h:inputText>
+                                <h:message for="inputEmail" style="color:red"/>
+                            </div>
+                        </div>
+                        <hr class="mb-4"/>
+                        <h:commandButton action="#{user.update()}" class="btn btn-info btn-block" value="update"/>
+                        <br/>
+                    </div>
+                </div>
+            </h:form>
+        </div>
+        <br/><br/><br/>
+        <ui:include src="footer.xhtml"/>
+    </body>
+</html>
